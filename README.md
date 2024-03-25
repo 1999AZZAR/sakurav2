@@ -1,6 +1,6 @@
 # Sakura V2
 
-A stripdown version of [SakuraAi-Bloom](https://github.com/1999AZZAR/sakuraAI_Bloom) with more fluid conversational behavior.
+A strip down version of [SakuraAi-Bloom](https://github.com/1999AZZAR/sakuraAI_Bloom) but with more fluid conversational behavior.
 
 ## Overview
 
@@ -40,7 +40,13 @@ To run this Telegram chat bot, follow these steps:
 
    - Ensure that the `.env` file is properly configured with the correct API keys.
 
-4. **Run the Bot:**
+4. **Change the response behavior(optional):**
+   - open the `gemini_res.py` file.
+   - on the `chat_instruction` part u can change the instruction as u like.
+   - save the file and done, you have successfully change the generated response behavior.
+   - or u can just leave it as it is, but i need to remind u that the instruction for now can make the behavior to be to lewd.
+
+5. **Run the Bot:**
    - Execute the `main.py` script to start the bot:
 
      ```text

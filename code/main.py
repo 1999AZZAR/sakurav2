@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-from telegram import Update, Bot, ChatAction
+from telegram import Update, Bot, ChatAction, ParseMode
+from telegram.utils.helpers import escape_markdown
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from gemini_res import GeminiChat
 from stability_res import ImageGenerator
@@ -39,7 +40,9 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     else:
         update.message.chat.send_action(ChatAction.TYPING)
         response = chat_app.generate_chat(user_input)
-        update.message.reply_text(response, parse_mode="MARKDOWN")
+
+        escaped_response = escape_markdown(response, version=2)
+        update.message.reply_text(escaped_response, parse_mode=ParseMode.MARKDOWN_V2)
 
 # Function to handle '/reset' command
 def reset_conversation(update: Update, context: CallbackContext) -> None:
