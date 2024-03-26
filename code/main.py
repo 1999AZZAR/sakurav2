@@ -5,7 +5,6 @@ from telegram.utils.helpers import escape_markdown
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from gemini_res import GeminiChat
 from stability_res import ImageGenerator
-import time
 
 # Load environment variables from .env file
 load_dotenv()
